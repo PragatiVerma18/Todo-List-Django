@@ -36,23 +36,17 @@
       <button class="button is-black is-rounded is-medium">Add a New Task</button>
     </div>
   
-
-    
-
-    <div class="block">
-        <hr width="60%" style="margin: auto;">
         <hr width="60%" style="margin: auto;">
       <h1 class="title has-text-black-ter has-text-centered has-text-weight-bold">Tasks</h1>
       <hr width="60%" style="margin: auto;">
-      <hr width="60%" style="margin: auto;">
-    </div>
  
 
 </section>
 
+
 <section class="section">
   <div class="container">
-
+      {% for todo in todos %}
 <div class="card">
   <div class="card-content" style="display: flex; flex-direction: row;">
 
@@ -60,20 +54,26 @@
             <i class="fas fa-check-circle fa-2x"></i>
           </span>
 
-<p class="is-size-4">Lorem ipsum dolor sit amet.</p>
+<p class="is-size-4 title">{{ todo.text }}</p>
+
 
 <span class="icon has-text-danger" style="margin-left: auto;">
     <i class="fas fa-times-circle fa-2x"></i>
   </span>
 
 </div>
+
+
 </div>
+{% endfor %}
 </div>
+
 </div>
 </section>
 
+
   
- <footer >
+ <footer  style="margin-top: -70px;">
     <img src="https://d2hkcehpyog59.cloudfront.net/966cef174098b5003bf3f2853b880835672e169c/homewebsite_theme@2x.png" alt="">
   </footer>
 
