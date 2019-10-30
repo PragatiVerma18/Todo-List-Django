@@ -22,3 +22,8 @@ def add(request):
   context = {'form': form}
 
   return render(request, "todo/add.html", context) 
+
+def delete_todo(request, todo_id):
+    Todo.objects.get(id = todo_id).delete()
+    
+    return redirect('home')

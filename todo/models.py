@@ -5,7 +5,7 @@ class Todo(models.Model):
   date_posted = models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
-    return 'Todo #{}'.format(self.id)
+    return (self.id)
  
   class Meta:
     verbose_name_plural = 'Todos'

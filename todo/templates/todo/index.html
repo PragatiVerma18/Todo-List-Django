@@ -50,15 +50,18 @@
 <div class="card">
   <div class="card-content" style="display: flex; flex-direction: row;">
 
-        <span class="icon has-text-success" style="margin-right: auto;">
+        <span class="icon has-text-success has-text-centered" style="margin-right: auto;">
+          <a class="has-text-success" href="#" onclick="this.parentElement.parentElement.style.textDecoration='line-through'">
             <i class="fas fa-check-circle fa-2x"></i>
+            </a>
           </span>
 
 <p class="is-size-4 title has-text-centered">{{ todo.text }}</p>
 
 
-<span class="icon has-text-danger" style="margin-left: auto;">
-    <i class="fas fa-times-circle fa-2x"></i>
+<span class="icon has-text-danger has-text-centered" style="margin-left: auto;">
+    <a href="{% url 'delete_todo' todo.id %}" class="has-text-danger">
+    <i class="fas fa-times-circle fa-2x"></i></a>
   </span>
 
 </div>
