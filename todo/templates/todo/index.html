@@ -33,7 +33,7 @@
   <section class="section" >
     <div class="container" style="margin-bottom: 20px; display: flex; justify-content: center; align-content: center; flex-direction: row;">
 
-      <button class="button is-black is-rounded is-medium">Add a New Task</button>
+      <a class="button is-black is-rounded is-medium" href="{% url 'add' %} ">Add a New Task</a>
     </div>
   
         <hr width="60%" style="margin: auto;">
@@ -54,7 +54,7 @@
             <i class="fas fa-check-circle fa-2x"></i>
           </span>
 
-<p class="is-size-4 title">{{ todo.text }}</p>
+<p class="is-size-4 title has-text-centered">{{ todo.text }}</p>
 
 
 <span class="icon has-text-danger" style="margin-left: auto;">

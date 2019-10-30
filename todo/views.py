@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Todo
+from .forms import TodoForm
 
 # Create your views here.
 def index(request):
@@ -8,4 +9,16 @@ def index(request):
   return render(request, "todo/index.html",context)
 
 def add(request):
-  return render(request, "todo/add.html") 
+  if request.method == 'POST':
+    form = TodoForm(request.POST)
+
+    if form.is_valid():
+      form.save()
+      return redirect('home')
+
+  else:
+    form = TodoForm()
+
+  context = {'form': form}
+
+  return render(request, "todo/add.html", context) 

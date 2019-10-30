@@ -29,10 +29,23 @@
 
   <div class="container" style="margin-top: 50px ;">
     <div class="block">
-    <div class="textarea"></div>
-    </div>
-    <div class="block">
-    <button class="is-warning button"> Add Task</button>
+        <form action="{% url 'add' %}" method="POST">
+            {% csrf_token %}
+        <div class="field">
+            <div class="control">
+                <!--<textarea class="textarea" placeholder="What's on your mind?"></textarea>-->
+                
+                {{ form.text }}
+
+            </div>
+        </div>
+
+        <div class="field is-grouped is-grouped-right">
+            <div class="control">
+                <button class="button is-link">Add Task</button>
+            </div>
+        </div>
+    </form>
   </div>
   </div>
 
